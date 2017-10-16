@@ -40,6 +40,18 @@ return gulp.src( srcPath.html+'/**/*.html' )
 	.pipe(changed( destPath.html ))
 	.pipe(gulp.dest( destPath.html ));
 });
+// //其他文件间输出
+// gulp.task('music', function() {
+// return gulp.src( 'src/music/**/*.mp3' )
+// 	.pipe(changed( 'dist/music' ))
+// 	.pipe(gulp.dest( 'dist/music' ));
+// });
+//css处理
+gulp.task('css', function() {
+return gulp.src( srcPath.css+'/**/*.css' )
+	.pipe(changed( destPath.css ))
+	.pipe(gulp.dest( destPath.css ));
+});
 // 样式处理
 gulp.task('sass', function () {
 return sass( srcPath.css+'/*.scss', { style: 'compact', sourcemap: true }) // 指明源文件路径、并进行文件匹配（编译风格：简洁格式）
@@ -59,7 +71,7 @@ return gulp.src( [srcPath.script+'/*.js','!'+srcPath.script+'/*.min.js'] ) // �
 	.pipe(changed( destPath.script )) // 对应匹配的文件
 	.pipe(sourcemaps.init()) // 执行sourcemaps
 	.pipe(rename({ suffix: '.min' })) // 重命名
-	.pipe(uglify()) // 使用uglify进行压缩，并保留部分注释
+	//.pipe(uglify()) // 使用uglify进行压缩，并保留部分注释
 	.pipe(sourcemaps.write('maps')) // 地图输出路径（存放位置）
 	.pipe(gulp.dest( destPath.script )); // 输出路径
 });
@@ -101,7 +113,7 @@ gulp.watch( srcPath.image+'/**/*' , ['images']);
 gulp.watch( [srcPath.script+'/*.js','!'+srcPath.script+'/*.min.js'] , ['script']);
 });
 // 默认任务
-gulp.task('default',['concat','images','script','sass','html','watch']);//'webserver'
+gulp.task('default',['concat','images','script','sass','html','css','watch']);//'webserver'
 
 /* = 发布环境( Release Task )
 -------------------------------------------------------------- */

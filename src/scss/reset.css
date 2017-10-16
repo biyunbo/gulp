@@ -1,0 +1,31 @@
+@charset "utf-8";
+/*=========================Reset_start==========================*/
+body, dl, dd, h1, h2, h3, h4, h5, h6, p, form{margin:0;}
+ol,ul{margin:0; padding:0;}
+html,body{font-family:"微软雅黑","宋体",Arail,Tabhoma; font-size: 12px; text-align: left;color: #555555;}
+ul,ol{list-style: none;}
+img{border: 0;}
+input,select,textarea{outline:0;}
+textarea{resize:none;}
+table{border-collapse: collapse; border-spacing: 0;}
+th,strong,var,em{font-weight: normal; font-style: normal;}
+a{text-decoration: none;}
+.clear:after{content:".";clear:both;display: block;height: 0;overflow: hidden;visibility: hidden;}
+/*a:link,a:visited,a:hover,a:active{text-decoration:none;} */
+/*==========================Reset_End===========================*/
+::-webkit-input-placeholder {
+　　color:#bebebe;
+	font-family:"Microsoft yahei";
+}
+:-moz-placeholder { 
+　　color:#bebebe;
+	font-family:"Microsoft yahei";
+}
+::-moz-placeholder {
+　　color:#bebebe;
+	font-family:"Microsoft yahei";
+}
+:-ms-input-placeholder {
+　　color:#bebebe;
+	font-family:"Microsoft yahei";
+}
